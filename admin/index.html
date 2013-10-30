@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrap Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+</head>
+<body>
+<!-- 上 -->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <ul class="nav pull-right">
+                <li id="fat-menu" class="dropdown">
+                    <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user icon-white"></i> JIMMY CHOU
+                        <i class="icon-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="#">修改密码</a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="sign-in.html">安全退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="brand" href="index.html"><span class="first">口袋映画</span></a>
+            <ul class="nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">运营管理</a></li>
+                <li><a href="#">数据分析</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 左 -->
+<div class="sidebar-nav">
+    <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-exclamation-sign"></i>用户PV浏览</a>
+    <ul id="dashboard-menu" class="nav nav-list collapse in">
+        <li><a href="index.html">新用户PV</a></li>
+        <li><a href="index.html">累计用户PV</a></li>
+        <li><a href="index.html">活跃用户PV</a></li>
+    </ul>
+    <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-exclamation-sign"></i>运营管理</a>
+    <ul id="accounts-menu" class="nav nav-list collapse">
+        <li><a href="crud.html">商品管理</a></li>
+        <li><a href="crud.html">资讯管理</a></li>
+        <li><a href="crud.html">应用管理</a></li>
+    </ul>
+    <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>系统权限</a>
+    <ul id="error-menu" class="nav nav-list collapse">
+        <li><a href="crud.html">角色管理</a></li>
+        <li><a href="crud.html">权限管理</a></li>
+    </ul>
+    <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-exclamation-sign"></i>系统页面</a>
+    <ul id="legal-menu" class="nav nav-list collapse">
+        <li><a href="login.html">登录页面</a></li>
+        <li><a href="register.html">注册页面</a></li>
+        <li><a href="updatepaasword.html">密码修改</a></li>
+    </ul>
+    <a href="http://yiquwei.com/" target="_blank" class="nav-header"><i class="icon-exclamation-sign"></i>关于</a>
+</div>
+<!-- 右 -->
+<div class="content">
+    <!-- header -->
+    <div class="header">
+        <h1 class="page-title">新用户PV</h1>
+    </div>
+    <!-- highchat show -->
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p>© 2013 <a href="http://www.yiquwei.com" target="_blank">JIMMY CHOU</a></p>
+    </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/jquery-1.8.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- for highchar -->
+<script src="js/highcharts.js"></script>
+<script src="js/exporting.js"></script>
+<script >
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Monthly Average Temperature',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: 'New York',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }, {
+            name: 'Berlin',
+            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        }, {
+            name: 'London',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+});
+</script>
+</html>
